@@ -328,10 +328,10 @@ public class AssessmentRunner {
 
     public static void main(String[] args) {
         Display display = new Display();
-    	List<CarResult> handler = new CarResultHandler.GroupedResultsBuilder(CARS, new CarResultGroupFactory())
+    	List<CarResult> results = new CarResultHandler.GroupedResultsBuilder(CARS, new CarResultGroupFactory())
     			.sortWithinGroup(new CarResultPriceComparator())
     			.filterWithinGroup(new CarResultFilterRemoveFullFullAboveMedianPrice())
     			.build();
-        display.render(handler);
+        display.render(results);
     }        
 }
